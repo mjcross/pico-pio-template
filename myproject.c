@@ -13,9 +13,9 @@ int main() {
     if (myproject_init (pio, &sm, gpio)) {
         puts ("running");
         while(true) {
-            pio_sm_put (pio, sm, 1);    // turn led on
+            pio_sm_put (pio, sm, 1);    // send '1' to SM FIFO (LED on)
             sleep_ms (500);
-            pio_sm_put (pio, sm, 0);    // turn led off
+            pio_sm_put (pio, sm, 0);    // send '0' to SM FIFO (LED off)
             sleep_ms (500);
         }
     }

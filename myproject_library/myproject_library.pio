@@ -2,8 +2,8 @@
 
 PUBLIC entry:
 .wrap_target
-    pull
-    out pins, 1
+    pull block      ; load a 32-bit word from the TX FIFO into the OSR
+    out pins, 1     ; shift a single bit out of the OSR to the GPIO Pin
 .wrap
 
 
