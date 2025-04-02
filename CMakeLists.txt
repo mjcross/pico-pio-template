@@ -35,7 +35,6 @@ project(myproject C CXX ASM)
 pico_sdk_init()
 
 # Add executable. Default name is <project name>.c, version 0.1
-
 add_executable(${PROJECT_NAME} ${PROJECT_NAME}.c )
 
 # if the program name is different to the project name then set it here!
@@ -61,9 +60,9 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 add_subdirectory(myproject_library)
 
 # Add additional libraries to the project
-target_link_libraries(myproject 
+target_link_libraries(${PROJECT_NAME} 
         hardware_pio
 		myproject_library
         )
 
-pico_add_extra_outputs(myproject)
+pico_add_extra_outputs(${PROJECT_NAME})
